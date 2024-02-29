@@ -1,0 +1,32 @@
+.container {
+	@apply rounded-2xl backdrop-blur-[15px] bg-[rgba(255,255,255,0.2)];
+	width: 90%;
+	max-width: 500px;
+	height: auto;
+	max-height: 70vh;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.title {
+	@apply font-heading font-bold text-[30px] text-[#fff] text-center;
+	margin-bottom: 20px;
+}
+
+.input-style {
+	@apply bg-[rgba(2,5,16,0.7)] text-white placeholder-gray rounded-[10px]
+      px-4 py-2 focus:outline-none focus:ring-2 
+      focus:border-black backdrop-blur-[10px];
+	width: 100%;
+}
+
+.input-style:focus {
+	@apply bg-[rgba(2,5,16,0.9)];
+}
+
+.button {
+	@apply text-center;
+	width: 100%;
+}
