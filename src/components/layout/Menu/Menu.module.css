@@ -53,3 +53,6 @@
 .mobileMenu {
 	@apply px-2 pt-2 pb-3 space-y-1 phone:px-3;
 }
+.menuIcons {
+	margin-left: auto;
+}

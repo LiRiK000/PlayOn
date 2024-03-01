@@ -1,10 +1,18 @@
 import { FaBars, FaRegBell, FaTimes, FaUserCircle } from 'react-icons/fa';
+import { useEffect, useState } from 'react';
 
 import styles from './Menu.module.css';
-import { useState } from 'react';
 
 const Menu = () => {
 	const [isOpen, setIsOpen] = useState(false);
+	const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		const handleResize = () => setIsMobile(window.innerWidth < 768);
+		window.addEventListener('resize', handleResize);
+		handleResize();
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
 
 	const toggleMenu = () => {
 		setIsOpen((prev) => !prev);
@@ -12,14 +20,14 @@ const Menu = () => {
 
 	return (
 		<div className={styles.menuContainer}>
-			<div className={`max-w-7xl mx-8 px-4 tablet:px-6 ${styles.menu}`}>
+			<div className={`max-w-7xl mx-8 px-4 tablet:px-6`}>
 				<div
-					className={`flex justify-between items-center py-4 tablet:justify-start tablet:space-x-10 ${styles.menuInner}`}
+					className={`flex justify-between items-center py-4 tablet:justify-start ${styles.menuInner}`}
 				>
 					<div className='flex items-center'>
 						<div className={`relative ${styles.logo}`}>
 							<a
-								href='#'
+								href='/'
 								className={`text-white font-semibold font-heading text-xl ${styles.logoText}`}
 							>
 								<span className={`${styles.gradientText}`}>PlayOn</span>
@@ -27,42 +35,59 @@ const Menu = () => {
 						</div>
 						<div className='hidden tablet:flex items-center py-2'>
 							<a
-								href='#'
+								href='/home'
 								className={`text-white hover:text-gray px-4 py-2 ${styles.menuLink}`}
 							>
 								Home
 							</a>
 							<a
-								href='#'
+								href='/movies'
 								className={`text-white hover:text-gray px-4 py-2 ${styles.menuLink}`}
 							>
 								Movies
 							</a>
 							<a
-								href='#'
+								href='/series'
 								className={`text-white hover:text-gray px-4 py-2 ${styles.menuLink}`}
 							>
 								Series
 							</a>
 							<a
-								href='#'
+								href='/top'
 								className={`text-white hover:text-gray px-4 py-2 ${styles.menuLink}`}
 							>
 								Top
 							</a>
 						</div>
 					</div>
-					<div className='-mr-2 -my-2 tablet:hidden'>
-						<button
-							type='button'
-							onClick={toggleMenu}
-							className={`text-white hover:text-gray focus:outline-none ${styles.menuToggle}`}
-							aria-expanded={isOpen}
-							aria-label={isOpen ? 'Close Menu' : 'Open Menu'}
-						>
-							{isOpen ? <FaTimes /> : <FaBars />}
-						</button>
-					</div>
+					{isMobile ? (
+						<div className='-mr-2 -my-2 tablet:hidden'>
+							<button
+								type='button'
+								onClick={toggleMenu}
+								className={`text-white hover:text-gray focus:outline-none ${styles.menuToggle}`}
+								aria-expanded={isOpen}
+								aria-label={isOpen ? 'Close Menu' : 'Open Menu'}
+							>
+								{isOpen ? <FaTimes /> : <FaBars />}
+							</button>
+						</div>
+					) : (
+						<div className='flex items-center ml-auto'>
+							<button
+								className={`text-white hover:text-gray block px-3 py-2 ${styles.menuLink}`}
+							>
+								<a href='/profile'>
+									<FaUserCircle className={styles.icon} />
+								</a>
+							</button>
+							<button
+								className={`text-white hover:text-gray block px-3 py-2 ${styles.menuLink}`}
+							>
+								<FaRegBell className={styles.icon} />
+							</button>
+						</div>
+					)}
 				</div>
 			</div>
 			<div className={`tablet:hidden ${styles.mobileMenuContainer}`}>
@@ -98,12 +123,12 @@ const Menu = () => {
 							<button
 								className={`text-white hover:text-gray block px-3 py-2 ${styles.menuLink}`}
 							>
-								<FaUserCircle />
+								<FaUserCircle className={styles.icon} />
 							</button>
 							<button
 								className={`text-white hover:text-gray block px-3 py-2 ${styles.menuLink}`}
 							>
-								<FaRegBell />
+								<FaRegBell className={styles.icon} />
 							</button>
 						</div>
 					</div>
