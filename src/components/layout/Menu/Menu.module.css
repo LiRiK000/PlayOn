@@ -1,0 +1,55 @@
+.menuContainer {
+	width: 100%;
+	background-color: #000;
+}
+
+.menuContainer {
+	width: 100%;
+	background-color: #000;
+}
+
+.mobileMenu {
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.menuInner {
+	@apply py-4;
+
+	@screen tablet {
+		justify-content: flex-start;
+		space-x: 10;
+	}
+}
+
+.logo {
+	@apply relative;
+}
+
+.logoText {
+	@apply text-white font-semibold font-heading text-xl;
+}
+
+.gradientText {
+	@apply text-transparent bg-clip-text text-3xl mr-2;
+	background-image: linear-gradient(to right, #8a2387, #e94057, #f27121);
+}
+
+.menuLink {
+	@apply text-white hover:text-gray px-4 py-2 text-xl transition-all;
+}
+
+.menuToggle {
+	@apply text-white hover:text-gray focus:outline-none;
+}
+
+.mobileMenuContainer {
+	@apply block tablet:hidden;
+}
+
+.mobileMenu {
+	@apply px-2 pt-2 pb-3 space-y-1 phone:px-3;
+}
