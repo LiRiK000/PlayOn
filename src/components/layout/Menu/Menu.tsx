@@ -19,8 +19,8 @@ const Menu = () => {
 	};
 
 	return (
-		<div className={styles.menuContainer}>
-			<div className={`max-w-7xl mx-8 px-4 tablet:px-6`}>
+		<header className={styles.menuContainer}>
+			<div className={`mx-8 px-4 tablet:px-6`}>
 				<div
 					className={`flex justify-between items-center py-4 tablet:justify-start ${styles.menuInner}`}
 				>
@@ -28,9 +28,9 @@ const Menu = () => {
 						<div className={`relative ${styles.logo}`}>
 							<a
 								href='/'
-								className={`text-white font-semibold font-heading text-xl ${styles.logoText}`}
+								className={`text-white font-semibold font-heading text-xl  ${styles.logoText}`}
 							>
-								<span className={`${styles.gradientText}`}>PlayOn</span>
+								<span className={` ${styles.gradientText}`}>PlayOn</span>
 							</a>
 						</div>
 						<div className='hidden tablet:flex items-center py-2'>
@@ -134,7 +134,7 @@ const Menu = () => {
 					</div>
 				)}
 			</div>
-		</div>
+		</header>
 	);
 };
 
