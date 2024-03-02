@@ -28,7 +28,7 @@ export const RegAndLogForm: FC<IFormProps> = ({ isRegistration }) => {
 	const [isError, setIsError] = useState(false);
 	const handleClick = () => {
 		if (username === '' || email === '' || password === '') {
-			setIsError(!isError);
+			setIsError(true);
 		}
 	};
 
