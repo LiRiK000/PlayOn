@@ -41,9 +41,10 @@ const Menu = () => {
 							</a>
 						</div>
 						<div className='hidden tablet:flex items-center py-2'>
-							{menuItems.map((item) => (
+							{menuItems.map((item, index) => (
 								<a
 									href={`${item.path}`}
+									key={index}
 									className={`text-white hover:text-gray px-4 py-2 ${styles.menuLink}`}
 								>
 									{item.title}
@@ -86,9 +87,10 @@ const Menu = () => {
 					<div
 						className={`px-2 pt-2 pb-3 space-y-1 phone:px-3 ${styles.mobileMenu}`}
 					>
-						{menuItems.map((item) => (
+						{menuItems.map((item, index) => (
 							<a
 								href={`${item.path}`}
+								key={index}
 								className={`text-white hover:text-gray block px-3 py-2 ${styles.menuLink}`}
 							>
 								{item.title}
