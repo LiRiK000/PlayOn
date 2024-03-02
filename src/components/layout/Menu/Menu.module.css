@@ -35,7 +35,7 @@
 }
 
 .menuLink {
-	@apply text-white hover:text-gray px-4 py-2 text-xl transition-all;
+	@apply text-white hover:text-gray px-4 py-2 text-2xl transition-all;
 }
 
 .menuToggle {
