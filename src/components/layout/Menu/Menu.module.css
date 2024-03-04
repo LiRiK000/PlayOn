@@ -1,6 +1,6 @@
 .menuContainer {
 	width: 100%;
-	background-color: #000;
+	background: rgba(233, 233, 233, 0.1);
 }
 
 .menuContainer {
@@ -9,10 +9,7 @@
 }
 
 .mobileMenu {
-	padding-left: 0.5rem;
-	padding-right: 0.5rem;
-	padding-top: 0.5rem;
-	padding-bottom: 0.5rem;
+	@apply px-2 py-2;
 	background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -21,7 +18,6 @@
 
 	@screen tablet {
 		justify-content: flex-start;
-		space-x: 10;
 	}
 }
 
@@ -39,7 +35,7 @@
 }
 
 .menuLink {
-	@apply text-white hover:text-gray px-4 py-2 text-xl transition-all;
+	@apply text-white hover:text-gray px-4 py-2 text-2xl transition-all;
 }
 
 .menuToggle {

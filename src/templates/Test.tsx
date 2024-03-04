@@ -1,3 +1,4 @@
+import { Footer } from '@layout/Footer/Footer';
 import Menu from '@layout/Menu/Menu';
 import { ResemblingSection as Resembling } from '@independent/Resembling/Resembling';
 
@@ -7,6 +8,7 @@ export const Test = () => {
 		<section className=' tablet:mx-[50px] phone:mx-[11px]'>
 			<Menu />
 			<Resembling images={images} />
+			<Footer />
 		</section>
 	);
 };
