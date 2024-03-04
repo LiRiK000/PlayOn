@@ -20,7 +20,7 @@ const Menu = () => {
 
 	return (
 		<div className={styles.menuContainer}>
-			<div className={`max-w-7xl mx-8 px-4 tablet:px-6`}>
+			<div className={`mx-8 px-4 tablet:px-6`}>
 				<div
 					className={`flex justify-between items-center py-4 tablet:justify-start ${styles.menuInner}`}
 				>
