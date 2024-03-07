@@ -1,7 +1,14 @@
 import { FaBars, FaRegBell, FaTimes, FaUserCircle } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
 
+import { menuItems } from '@data/menuItems';
 import styles from './Menu.module.css';
+
+/*
+ * This is the menu component
+ *
+ * @return {JSX.Element} The header component representing the menu.
+ */
 
 const Menu = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -19,8 +26,8 @@ const Menu = () => {
 	};
 
 	return (
-		<div className={styles.menuContainer}>
-			<div className={`max-w-7xl mx-8 px-4 tablet:px-6`}>
+		<header className={styles.menuContainer}>
+			<div className={`mx-8 px-4 tablet:px-6`}>
 				<div
 					className={`flex justify-between items-center py-4 tablet:justify-start ${styles.menuInner}`}
 				>
@@ -30,34 +37,19 @@ const Menu = () => {
 								href='/'
 								className={`text-white font-semibold font-heading text-xl ${styles.logoText}`}
 							>
-								<span className={`${styles.gradientText}`}>PlayOn</span>
+								<span className={` ${styles.gradientText}`}>PlayOn</span>
 							</a>
 						</div>
 						<div className='hidden tablet:flex items-center py-2'>
-							<a
-								href='/home'
-								className={`text-white hover:text-gray px-4 py-2 ${styles.menuLink}`}
-							>
-								Home
-							</a>
-							<a
-								href='/movies'
-								className={`text-white hover:text-gray px-4 py-2 ${styles.menuLink}`}
-							>
-								Movies
-							</a>
-							<a
-								href='/series'
-								className={`text-white hover:text-gray px-4 py-2 ${styles.menuLink}`}
-							>
-								Series
-							</a>
-							<a
-								href='/top'
-								className={`text-white hover:text-gray px-4 py-2 ${styles.menuLink}`}
-							>
-								Top
-							</a>
+							{menuItems.map((item, index) => (
+								<a
+									href={`${item.path}`}
+									key={index}
+									className={`text-white hover:text-gray px-4 py-2 ${styles.menuLink}`}
+								>
+									{item.title}
+								</a>
+							))}
 						</div>
 					</div>
 					{isMobile ? (
@@ -95,30 +87,15 @@ const Menu = () => {
 					<div
 						className={`px-2 pt-2 pb-3 space-y-1 phone:px-3 ${styles.mobileMenu}`}
 					>
-						<a
-							href='#'
-							className={`text-white hover:text-gray block px-3 py-2 ${styles.menuLink}`}
-						>
-							Home
-						</a>
-						<a
-							href='#'
-							className={`text-white hover:text-gray block px-3 py-2 ${styles.menuLink}`}
-						>
-							Movies
-						</a>
-						<a
-							href='#'
-							className={`text-white hover:text-gray block px-3 py-2 ${styles.menuLink}`}
-						>
-							Series
-						</a>
-						<a
-							href='#'
-							className={`text-white hover:text-gray block px-3 py-2 ${styles.menuLink}`}
-						>
-							Top
-						</a>
+						{menuItems.map((item, index) => (
+							<a
+								href={`${item.path}`}
+								key={index}
+								className={`text-white hover:text-gray block px-3 py-2 ${styles.menuLink}`}
+							>
+								{item.title}
+							</a>
+						))}
 						<div className='flex flex-row justify-end'>
 							<button
 								className={`text-white hover:text-gray block px-3 py-2 ${styles.menuLink}`}
@@ -134,7 +111,7 @@ const Menu = () => {
 					</div>
 				)}
 			</div>
-		</div>
+		</header>
 	);
 };
 

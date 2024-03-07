@@ -12,14 +12,17 @@ export const MyRoutes = () => {
 				<Route
 					path='/'
 					element={
-						<h1>
-							Hello, go to <Code>/test</Code>
+						<h1 className='text-3xl text-[green]'>
+							<Code>
+								Hello, go to
+								<a href='/test'> /test</a>
+							</Code>
 						</h1>
 					}
 				/>
-				<Route path='/regostration' element={<RegistrationPage />} />
-				<Route path='/login' element={<LoginPage />} />
 				<Route path='/test' element={<Test />} />
+				<Route path='/registration' element={<RegistrationPage />} />
+				<Route path='/login' element={<LoginPage />} />
 				<Route path='/test/*' element={<h1>404 but special for test</h1>} />
 				<Route path='/*' element={<h1>404</h1>} />
 			</Routes>
