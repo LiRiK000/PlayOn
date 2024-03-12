@@ -1,7 +1,9 @@
-import { MyRoutes } from '@routes/MyRoutes';
+
+import Test from '@templates/Test';
 
 function App() {
-	return <MyRoutes />;
+	return <Test />;
+	
 }
 
 export default App;
