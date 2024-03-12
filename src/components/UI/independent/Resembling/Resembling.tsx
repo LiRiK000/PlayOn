@@ -7,8 +7,7 @@ interface IResemblingProps {
 export const ResemblingSection: React.FC<IResemblingProps> = ({ images }) => {
 	return (
 		<section
-			className='w-full bg-[rgb(2,5,16)] rounded-xl
-      backdrop-blur-[30px] p-8 max-laptop:overflow-x-scroll'
+			className='w-full bg-[rgb(2,5,16)] rounded-xlbackdrop-blur-[30px] p-8 max-laptop:overflow-x-scroll'
 		>
 			<div
 				className='hidden laptop:block
