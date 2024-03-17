@@ -1,16 +1,22 @@
 import { Footer } from '@layout/Footer/Footer';
 import Menu from '@layout/Menu/Menu';
-import { ResemblingSection as Resembling } from '@independent/Resembling/Resembling';
+import Slider from '@independent/Form/Slider';
 
 export const Test = () => {
 	const images = ['/1.png', '/2.png', '/3.png', '/4.png', '/5.png'];
 	return (
-	<>
-		<section className=' tablet:mx-[50px] phone:mx-[11px]'>
+		<main className='overflow-x-hidden min-h-screen bg-[#0A031C]'>
 			<Menu />
-			<Resembling images={images} />
-		</section>
-		<Footer />
-	</>
+			<Slider
+				imagesSlider={[
+					'/Slider1.webp',
+					'/Slider2.webp',
+					'/Slider3.webp',
+					'/Slider4.webp',
+					'/Slider5.webp',
+				]}
+			/>
+			<Footer />
+		</main>
 	);
 };
