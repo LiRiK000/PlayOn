@@ -3,6 +3,7 @@ import Menu from '@layout/Menu/Menu';
 import Slider from '@independent/Form/Slider';
 
 export const Test = () => {
+	const images = ['/1.png', '/2.png', '/3.png', '/4.png', '/5.png'];
 	return (
 		<main className='overflow-x-hidden min-h-screen bg-[#0A031C]'>
 			<Menu />
