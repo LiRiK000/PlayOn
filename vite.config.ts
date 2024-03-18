@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import envCompatible from 'vite-plugin-env-compatible';
 import path from 'path';
 import react from '@vitejs/plugin-react-swc';
 
@@ -25,5 +26,5 @@ export default defineConfig({
 			'@templates': path.resolve('src/templates'),
 		},
 	},
-	plugins: [react()],
+	plugins: [envCompatible(), react()],
 });

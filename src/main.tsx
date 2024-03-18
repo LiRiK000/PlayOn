@@ -1,4 +1,5 @@
 import './global.css';
+import './firebase.ts';
 
 import { ChakraProvider, theme } from '@chakra-ui/react';
 
