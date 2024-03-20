@@ -1,6 +1,6 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
-import { Code } from '@chakra-ui/react';
+import { Button } from '@chakra-ui/react';
 import { LoginPage } from '@pages/LoginPage';
 import { RegistrationPage } from '@pages/RegistrationPage';
 import { Test } from '@templates/Test';
@@ -12,9 +12,13 @@ export const MyRoutes = () => {
 				<Route
 					path='/'
 					element={
-						<h1>
-							Hello, go to <Code>/test</Code>
-						</h1>
+						<div className='flex justify-center items-center w-full h-screen'>
+							<a href='/test'>
+								<Button className='p-10 bg-zinc-800 hover:bg-black'>
+									<span className='text-xl'>go to test</span>
+								</Button>
+							</a>
+						</div>
 					}
 				/>
 				<Route path='/regostration' element={<RegistrationPage />} />

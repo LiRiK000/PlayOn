@@ -2,7 +2,7 @@ import { MyRoutes } from '@routes/MyRoutes';
 
 function App() {
 	return (
-		<main className='overflow-x-clip'>
+		<main className='overflow-x-hidden bg-[#0A031C]'>
 			<MyRoutes />
 		</main>
 	);
