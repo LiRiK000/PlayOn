@@ -4,6 +4,7 @@ import { Button } from '@chakra-ui/react';
 import { LoginPage } from '@pages/LoginPage';
 import { RegistrationPage } from '@pages/RegistrationPage';
 import { Test } from '@templates/Test';
+import { ProfilePage } from '@pages/ProfilePage';
 
 export const MyRoutes = () => {
 	return (
@@ -24,6 +25,7 @@ export const MyRoutes = () => {
 				<Route path='/regostration' element={<RegistrationPage />} />
 				<Route path='/login' element={<LoginPage />} />
 				<Route path='/test' element={<Test />} />
+				<Route path='/profile' element={<ProfilePage />} />
 				<Route path='/test/*' element={<h1>404 but special for test</h1>} />
 				<Route path='/*' element={<h1>404</h1>} />
 			</Routes>

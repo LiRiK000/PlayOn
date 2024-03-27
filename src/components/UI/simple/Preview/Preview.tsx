@@ -2,7 +2,7 @@ import { Box, Image } from '@chakra-ui/react';
 
 export const Preview = () => {
 	return (
-		<Box className='overflow-x-hidden m-[10%] flex gap-x-10 max-tablet:gap-x-5 items-center justify-center '>
+		<Box className='overflow-x-hidden m-[5%] flex gap-x-2 max-tablet:gap-x-2 items-center justify-center'>
 			<Box>
 				<Image
 					src='/public/imgPreview/1.svg'

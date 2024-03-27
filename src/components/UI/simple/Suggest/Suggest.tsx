@@ -3,7 +3,10 @@ import { FC } from 'react';
 
 export const Suggest: FC = () => {
 	return (
-		<Box as='section' className='w-dvw'>
+		<Box
+			as='section'
+			className='w-svw h-[400px] max-laptop:h-[20rem] max-tablet:h-[600px]'
+		>
 			<Box className='absolute bg-[#956bff] w-[50%] h-[80%] opacity-20 blur-3xl z-0 rounded-full  ml-[5%]'></Box>
 			<Box className='absolute bg-[#48fcff] w-[65%] h-[40%] opacity-20 blur-3xl z-10 rounded-full ml-[40%] '></Box>
 			<Box className='absolute bg-[#f16363] w-[60%] h-[50%] opacity-20 blur-3xl z-0 rounded-full ml-[40%] mt-[10%]'></Box>
@@ -18,7 +21,11 @@ export const Suggest: FC = () => {
 			>
 				<SimpleGrid columns={[1, null, 2]} className='z-10'>
 					<Box display='flex' flexDirection='column' className='p-[10%]'>
-						<Box marginRight={5} color={'white'} className='text-[200%] '>
+						<Box
+							marginRight={5}
+							color={'white'}
+							className='text-[200%] max-tablet:text-[150%]'
+						>
 							Suggest what to see in the evening
 						</Box>
 						<Box
